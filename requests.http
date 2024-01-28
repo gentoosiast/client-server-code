@@ -1,0 +1,70 @@
+@baseUrl = https://jsonplaceholder.typicode.com
+@localBaseUrl = http://localhost:31337
+
+GET {{baseUrl}}/users
+
+###
+
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "id": 31337,
+  "name": "John Doe",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+}
+
+###
+
+DELETE {{baseUrl}}/users/4
+
+# Local server
+
+### GET root URL
+GET {{localBaseUrl}}
+
+### Get users
+GET {{localBaseUrl}}/users
+
+### Get 10 users
+GET {{localBaseUrl}}/users?limit=10
+
+### PATCH request
+PATCH {{localBaseUrl}}/patch
+Content-Type: application/json
+
+{
+  "id": 42,
+  "name": "Jane Doe"
+}
+
+# @baseUrl = http://localhost:31337
+
+# GET {{baseUrl}}/users/42
+
+# ###
+
+# PATCH {{baseUrl}}/patch
+# Content-Type: application/json
+
+# {
+#   "name": "John Doe"
+# }
